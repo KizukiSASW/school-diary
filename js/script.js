@@ -1,3 +1,55 @@
+// ========== ПЕРЕКЛЮЧЕНИЕ ТЕМЫ ==========
+document.addEventListener('DOMContentLoaded', function() {
+    // Кнопка переключения темы
+    const themeToggleBtn = document.getElementById('themeToggle');
+    
+    // Если кнопка существует
+    if (themeToggleBtn) {
+        const themeIcon = themeToggleBtn.querySelector('i');
+        
+        // Проверяем сохраненную тему
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            if (themeIcon) {
+                themeIcon.className = 'fas fa-sun';
+            }
+            themeToggleBtn.title = 'Переключить на светлую тему (Ctrl+T)';
+        }
+        
+        // Функция переключения темы
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                if (themeIcon) {
+                    themeIcon.className = 'fas fa-sun';
+                }
+                themeToggleBtn.title = 'Переключить на светлую тему (Ctrl+T)';
+                localStorage.setItem('theme', 'dark');
+                alert('Темная тема включена!');
+            } else {
+                if (themeIcon) {
+                    themeIcon.className = 'fas fa-moon';
+                }
+                themeToggleBtn.title = 'Переключить на темную тему (Ctrl+T)';
+                localStorage.setItem('theme', 'light');
+                alert('Светлая тема включена!');
+            }
+        }
+        
+        // Обработчик для кнопки
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        
+        // Обработчик для горячей клавиши
+        document.addEventListener('keydown', (event) => {
+            if (event.ctrlKey && event.key === 't') {
+                event.preventDefault();
+                toggleTheme();
+            }
+        });
+    }
+});
 // Данные оценок (имитация базы данных)
 let gradesData = [
     { id: 1, subject: 'math', monday: '5', tuesday: '4', wednesday: '5', thursday: '', friday: '5', average: 4.8 },

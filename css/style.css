@@ -490,4 +490,123 @@ tbody tr:hover {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+}/* ===== ТЕМНАЯ ТЕМА ===== */
+.dark-theme {
+    background-color: #1a1a2e;
+    color: #e6e6e6;
+}
+
+.dark-theme .header {
+    background: linear-gradient(135deg, #0f3460, #16213e);
+}
+
+.dark-theme .logo i {
+    color: #64dfdf;
+}
+
+.dark-theme .nav a {
+    color: #e6e6e6;
+}
+
+.dark-theme .nav a.active,
+.dark-theme .nav a:hover {
+    background-color: rgba(100, 223, 223, 0.2);
+}
+
+.dark-theme .user-info {
+    background-color: rgba(100, 223, 223, 0.1);
+}
+
+.dark-theme .sidebar,
+.dark-theme .profile-card,
+.dark-theme .quick-info,
+.dark-theme .controls,
+.dark-theme .diary-table,
+.dark-theme .stat-card,
+.dark-theme .footer {
+    background-color: #16213e;
+    color: #e6e6e6;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .btn {
+    background-color: #0f3460;
+    color: #e6e6e6;
+}
+
+.dark-theme .btn:hover {
+    background-color: #1d3557;
+}
+
+.dark-theme .btn-primary {
+    background-color: #457b9d;
+    color: white;
+}
+
+.dark-theme .btn-primary:hover {
+    background-color: #1d3557;
+}
+
+.dark-theme select {
+    background-color: #0f3460;
+    color: #e6e6e6;
+    border: 1px solid #457b9d;
+}
+
+.dark-theme table th {
+    background-color: #0f3460;
+    color: #e6e6e6;
+}
+
+.dark-theme table td {
+    border-bottom: 1px solid #457b9d;
+}
+
+.dark-theme tbody tr:hover {
+    background-color: rgba(100, 223, 223, 0.1);
+}
+
+.dark-theme .modal-content {
+    background-color: #16213e;
+    color: #e6e6e6;
+}
+
+.dark-theme .modal-content select {
+    background-color: #0f3460;
+    color: #e6e6e6;
+    border: 1px solid #457b9d;
+}
+
+/* Стили для кнопки переключения темы */
+.theme-toggle-btn {
+    background: transparent;
+    border: 2px solid #3498db;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-theme .theme-toggle-btn {
+    border-color: #64dfdf;
+    color: #64dfdf;
+}
+
+.dark-theme .theme-toggle-btn:hover {
+    background-color: rgba(100, 223, 223, 0.2);
+}
+
+/* Добавьте анимацию переключения темы */
+.dark-theme * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
