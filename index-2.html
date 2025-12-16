@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронный дневник | Школа №179</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Электронный дневник</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#diary" class="active"><i class="fas fa-book"></i> Дневник</a></li>
+                        <li><a href="#grades"><i class="fas fa-chart-line"></i> Успеваемость</a></li>
+                        <li><a href="#schedule"><i class="fas fa-calendar-alt"></i> Расписание</a></li>
+                        <li><a href="#homework"><i class="fas fa-tasks"></i> Домашнее задание</a></li>
+                    </ul>
+                </nav>
+                <div class="user-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToez4o6W6oNUlC2vCRa-5cIyMY5HOfYHTWHA&s" alt="Аватар ученика">
+                    <div class="user-details">
+                        <span class="user-name">Алешенька</span>
+                        <span class="user-class">10 "А" класс</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main container">
+        <!-- Левая панель (информация) -->
+        <aside class="sidebar">
+            <section class="profile-card">
+                <div class="avatar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToez4o6W6oNUlC2vCRa-5cIyMY5HOfYHTWHA&s" alt="Аватар ученика">
+                </div>
+                <h3>Алешенька</h3>
+                <p>10 "А" класс</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Средний балл</span>
+                        <span class="stat-value">4.6</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Пропусков</span>
+                        <span class="stat-value">3</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-info">
+                <h3><i class="fas fa-bell"></i> Ближайшие события</h3>
+                <ul>
+                    <li>Контрольная по математике - 15 мая</li>
+                    <li>Сдача проекта по физике - 18 мая</li>
+                    <li>Родительское собрание - 20 мая</li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Центральная часть (дневник) -->
+        <div class="content">
+            <!-- Панель управления -->
+            <section class="controls">
+                <h2>Журнал успеваемости</h2>
+                <div class="control-buttons">
+                    <button id="prevWeek" class="btn"><i class="fas fa-chevron-left"></i> Предыдущая неделя</button>
+                    <span id="currentWeek">Неделя 18-24 мая</span>
+                    <button id="nextWeek" class="btn">Следующая неделя <i class="fas fa-chevron-right"></i></button>
+                    <button id="addGradeBtn" class="btn btn-primary"><i class="fas fa-plus"></i> Добавить оценку</button>
+                </div>
+                <div class="filters">
+                    <select id="subjectFilter">
+                        <option value="all">Все предметы</option>
+                        <option value="math">Математика</option>
+                        <option value="russian">Русский язык</option>
+                        <option value="physics">Физика</option>
+                        <option value="history">История</option>
+                    </select>
+                    <button id="toggleColors" class="btn"><i class="fas fa-palette"></i> Цветовые оценки</button>
+                </div>
+            </section>
+
+            <!-- Таблица оценок (ОБЯЗАТЕЛЬНЫЙ ЭЛЕМЕНТ) -->
+            <section class="diary-table">
+                <h3>Оценки за неделю</h3>
+                <table id="gradesTable">
+                    <thead>
+                        <tr>
+                            <th>Предмет</th>
+                            <th>Понедельник</th>
+                            <th>Вторник</th>
+                            <th>Среда</th>
+                            <th>Четверг</th>
+                            <th>Пятница</th>
+                            <th>Средний балл</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gradesBody">
+                        <!-- Данные загружаются через JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Статистика -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h4><i class="fas fa-calculator"></i> Математика</h4>
+                    <p class="average">Средний балл: <span>4.8</span></p>
+                    <div class="grade-list">5, 5, 4, 5</div>
+                </div>
+                <div class="stat-card">
+                    <h4><i class="fas fa-book"></i> Русский язык</h4>
+                    <p class="average">Средний балл: <span>4.5</span></p>
+                    <div class="grade-list">5, 4, 4, 5</div>
+                </div>
+                <div class="stat-card">
+                    <h4><i class="fas fa-atom"></i> Физика</h4>
+                    <p class="average">Средний балл: <span>4.2</span></p>
+                    <div class="grade-list">4, 5, 3, 5</div>
+                </div>
+                <div class="stat-card">
+                    <h4><i class="fas fa-landmark"></i> История</h4>
+                    <p class="average">Средний балл: <span>4.7</span></p>
+                    <div class="grade-list">5, 5, 4, 5</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p><i class="fas fa-school"></i> Школа №179 с углублённым изучением математики</p>
+                    <p>© 2024 Электронный дневник. Все права защищены.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-question-circle"></i> Помощь</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Обратная связь</a>
+                    <a href="#"><i class="fas fa-cog"></i> Настройки</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно добавления оценки -->
+    <div id="gradeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Добавить новую оценку</h3>
+            <form id="addGradeForm">
+                <div class="form-group">
+                    <label for="subject">Предмет:</label>
+                    <select id="subject" required>
+                        <option value="math">Математика</option>
+                        <option value="russian">Русский язык</option>
+                        <option value="physics">Физика</option>
+                        <option value="history">История</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="day">День недели:</label>
+                    <select id="day" required>
+                        <option value="monday">Понедельник</option>
+                        <option value="tuesday">Вторник</option>
+                        <option value="wednesday">Среда</option>
+                        <option value="thursday">Четверг</option>
+                        <option value="friday">Пятница</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="grade">Оценка:</label>
+                    <select id="grade" required>
+                        <option value="5">5 (Отлично)</option>
+                        <option value="4">4 (Хорошо)</option>
+                        <option value="3">3 (Удовлетворительно)</option>
+                        <option value="2">2 (Неудовлетворительно)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Добавить оценку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
